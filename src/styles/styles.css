@@ -66,8 +66,8 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 105px 50px 250px;
-  margin-bottom: -100px;
+  padding: 50px 50px 50px;
+  margin-bottom: 70px;
 }
 
 .header-content-title {
@@ -192,7 +192,7 @@ p {
 }
 
 .section-discount {
-  padding: 80px 60px 130px 50%;
+  padding: 65px 60px 75px 50%;
   font-size: 22px;
   color: #929292;
   background-color: #cfcfcf;
@@ -264,12 +264,12 @@ p {
 
 .section-catalog {
   position: relative;
-  padding: 60px 50px 0;
+  padding: 30px 50px 0;
 }
 
 .section-catalog-discount {
   position: absolute;
-  top: 30px;
+  top: 0;
   right: 50px;
   width: 90px;
   height: 90px;
@@ -366,7 +366,6 @@ p {
 
 .section-catalog-slider {
   padding-top: 130px;
-  margin-bottom: 100px;
 }
 
 .section-catalog-slider-title {
@@ -650,7 +649,7 @@ p {
 .section-thanks {
   width: 100%;
   max-width: 1170px;
-  margin: 0 auto 120px;
+  margin: 0 auto 50px;
 }
 
 .section-thanks-title {

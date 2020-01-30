@@ -5,12 +5,12 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer>
-      <div class="container">
-        <div class="footer">
-          <div class="footer-item">
+      <div className="container">
+        <div className="footer">
+          <div className="footer-item">
             <p>2020 Все права защищены</p>
           </div>
-          <div class="footer-item">
+          <div className="footer-item">
             <p>Разработка сайта</p>
           </div>
         </div>

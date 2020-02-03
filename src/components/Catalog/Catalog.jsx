@@ -1,6 +1,8 @@
 import React from "react";
 
-import "./Catalog.css";
+import catalogItem from "images/catalog-item-1.jpg";
+
+import "./Catalog.scss";
 
 function Catalog() {
   return (
@@ -17,7 +19,7 @@ function Catalog() {
         <div className="catalog-item">
           <a href="/" className="catalog-item-img-link">
             <img
-              src="images/catalog-item-1.jpg"
+              src={catalogItem}
               alt=""
               className="catalog-item-img"
             />
@@ -33,7 +35,7 @@ function Catalog() {
         <div className="catalog-item">
           <a href="/" className="catalog-item-img-link">
             <img
-              src="images/catalog-item-1.jpg"
+              src={catalogItem}
               alt=""
               className="catalog-item-img"
             />
@@ -49,7 +51,7 @@ function Catalog() {
         <div className="catalog-item">
           <a href="/" className="catalog-item-img-link">
             <img
-              src="images/catalog-item-1.jpg"
+              src={catalogItem}
               alt=""
               className="catalog-item-img"
             />
@@ -65,7 +67,7 @@ function Catalog() {
         <div className="catalog-item">
           <a href="/" className="catalog-item-img-link">
             <img
-              src="images/catalog-item-1.jpg"
+              src={catalogItem}
               alt=""
               className="catalog-item-img"
             />
@@ -81,7 +83,7 @@ function Catalog() {
         <div className="catalog-item">
           <a href="/" className="catalog-item-img-link">
             <img
-              src="images/catalog-item-1.jpg"
+              src={catalogItem}
               alt=""
               className="catalog-item-img"
             />
@@ -97,7 +99,7 @@ function Catalog() {
         <div className="catalog-item">
           <a href="/" className="catalog-item-img-link">
             <img
-              src="images/catalog-item-1.jpg"
+              src={catalogItem}
               alt=""
               className="catalog-item-img"
             />

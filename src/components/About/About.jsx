@@ -1,6 +1,8 @@
 import React from "react";
 
-import "./About.css";
+import personImg from "images/person.jpg";
+
+import "./About.scss";
 
 function About() {
   return (
@@ -33,22 +35,22 @@ function About() {
         </div>
         <div className="team">
           <div className="person">
-            <img src="images/person.jpg" alt="" className="person-img" />
+            <img src={personImg} alt="" className="person-img" />
             <p className="person-name">Петр Иванов</p>
             <p className="person-description">мебельщик, стаж 27 лет</p>
           </div>
           <div className="person">
-            <img src="images/person.jpg" alt="" className="person-img" />
+            <img src={personImg} alt="" className="person-img" />
             <p className="person-name">Петр Иванов</p>
             <p className="person-description">мебельщик, стаж 27 лет</p>
           </div>
           <div className="person">
-            <img src="images/person.jpg" alt="" className="person-img" />
+            <img src={personImg} alt="" className="person-img" />
             <p className="person-name">Петр Иванов</p>
             <p className="person-description">мебельщик, стаж 27 лет</p>
           </div>
           <div className="person">
-            <img src="images/person.jpg" alt="" className="person-img" />
+            <img src={personImg} alt="" className="person-img" />
             <p className="person-name">Петр Иванов</p>
             <p className="person-description">мебельщик, стаж 27 лет</p>
           </div>

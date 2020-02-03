@@ -1,16 +1,16 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Discount from "../Discount";
-import Catalog from "../Catalog";
-import CatalogSlider from "../CatalogSlider";
-import About from "../About";
-import Feetback from "../Feetback";
-import Reviews from "../Reviews";
-import Thanks from "../Thanks";
-import Contacts from "../Contacts";
+import Discount from "components/Discount";
+import Catalog from "components/Catalog";
+import CatalogSlider from "components/CatalogSlider";
+import About from "components/About";
+import Feetback from "components/Feetback";
+import Reviews from "components/Reviews";
+import Thanks from "components/Thanks";
+import Contacts from "components/Contacts";
 
-import "./Main.css";
+import "./Main.scss";
 
 function Main() {
   return (
@@ -24,14 +24,6 @@ function Main() {
             <Catalog />
             <CatalogSlider />
           </Route>
-          {/* <Route
-              path="/projects/:id"
-              component={({ match }) => {
-                const project =
-                  projects.find(item => item.id == match.params.id) || {};
-                return <Project project={project} />;
-              }}
-            /> */}
           <Route exact path="/reviews">
             <Reviews />
             <Thanks />

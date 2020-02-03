@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Discount.css";
+import "./Discount.scss";
 
 function Discount() {
   return (

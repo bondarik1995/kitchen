@@ -1,7 +1,7 @@
 import React from "react";
 import { YMaps, Map } from "react-yandex-maps";
 
-import "./Contacts.css";
+import "./Contacts.scss";
 
 function Contacts() {
   return (

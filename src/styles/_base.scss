@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: bottom right / auto no-repeat url("../images/body-bg-pepper.png"),
+    top left / auto no-repeat url("../images/body-bg-red-pepper.png"),
+    #646464 center / contain repeat url("../images/body-bg.jpg");
+  background-attachment: fixed;
+}
+
+p {
+  margin: 0 0 $spacerDefault * 1.5 0;
+}
+
+.header {
+  background-image: url("../images/header-bg.jpg");
+  background-size: cover;
+}
+
+.section-discount {
+  background-color: #cfcfcf;
+  background-image: url("../images/section-discount-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+.discount-feetback::after {
+  background-image: url("../images/discount-feetback-img.png");
+}
+
+.section-about-company::before {
+  background-image: url("../images/about-company-img.png");
+}

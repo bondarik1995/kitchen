@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Feetback.css";
+import "./Feetback.scss";
 
 function Feetback() {
   return (

@@ -1,6 +1,8 @@
 import React from "react";
 
-import "./CatalogSlider.css";
+import catalogSliderItem from "images/catalog-slider-item-1.jpg";
+
+import "./CatalogSlider.scss";
 
 function CatalogSlider() {
   return (
@@ -32,7 +34,7 @@ function CatalogSlider() {
         </div>
         <div className="catalog-slider-content">
           <div className="catalog-slider-item">
-            <img src="images/catalog-slider-item-1.jpg" alt="" />
+            <img src={catalogSliderItem} alt="" />
           </div>
         </div>
         <div className="catalog-slider-description">

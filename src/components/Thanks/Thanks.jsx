@@ -1,6 +1,8 @@
 import React from "react";
 
-import "./Thanks.css";
+import reviewPerson from "images/review-person.png";
+
+import "./Thanks.scss";
 
 function Thanks() {
   return (
@@ -11,7 +13,7 @@ function Thanks() {
       <div className="reviews">
         <div className="review">
           <div className="review-media">
-            <img src="images/review-person.png" alt="" className="review-img" />
+            <img src={reviewPerson} alt="" className="review-img" />
           </div>
           <div className="review-description">
             <p className="review-name">Александр Иванович</p>

@@ -1,0 +1,64 @@
+.section-reviews {
+  margin-bottom: $spacerDefault * 12;
+  color: $baseFontColor;
+
+  &-title {
+    margin-bottom: $spacerDefault * 7;
+    text-align: center;
+
+    h2 {
+      margin: 0;
+      @include font-size(40);
+      font-weight: 400;
+    }
+  }
+
+  &-content {
+    display: flex;
+  }
+
+  &-description {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    padding-top: $spacerDefault * 6;
+    margin-right: $spacerDefault * 6;
+    @include font-size(20);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: $spacerDefault * 2;
+      right: 75%;
+      z-index: -1;
+      display: block;
+      width: 310px;
+      height: 310px;
+      border: 40px solid $decorationsColor;
+    }
+
+    &-title {
+      margin-bottom: $spacerDefault * 2.5;
+      @include font-size(35);
+      font-weight: bold;
+    }
+  }
+
+  &-videos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $spacerDefault * 3;
+  }
+
+  &-video-item {
+    &.big {
+      grid-column: 1 / 3;
+      grid-row: 1 /3;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import cx from "classnames";
 
 import Discount from "components/Discount";
 import Catalog from "components/Catalog";
@@ -10,12 +11,12 @@ import Reviews from "components/Reviews";
 import Thanks from "components/Thanks";
 import Contacts from "components/Contacts";
 
-import "./Main.scss";
+import stylesApp from "styles/_base.scss";
 
 function Main() {
   return (
     <main>
-      <div className="container">
+      <div className={cx(stylesApp["container"])}>
         <Switch>
           <Route exact path="/">
             <Discount />

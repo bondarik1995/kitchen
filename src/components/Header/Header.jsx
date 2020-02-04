@@ -1,57 +1,67 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cx from "classnames";
 
 import logo from "images/logo.png";
 
-import "./Header.scss";
+import styles from "./Header.module.scss";
+import stylesApp from "styles/_base.scss";
 
 function Header() {
   return (
-    <header className="header">
-      <div className="header-top">
-        <div className="container">
-          <Link to="/" className="header-top-logo">
-            <img src={logo} alt="" className="header-top-logo-img" />
+    <header className={cx(styles["header"])}>
+      <div className={cx(styles["header-top"])}>
+        <div className={cx(stylesApp["container"])}>
+          <Link to="/" className={cx(styles["header-top-logo"])}>
+            <img
+              src={logo}
+              alt=""
+              className={cx(styles["header-top-logo-img"])}
+            />
           </Link>
-          <nav className="header-top-nav">
-            <Link to="/" className="header-top-nav-link">
+          <nav className={cx(styles["header-top-nav"])}>
+            <Link to="/" className={cx(styles["header-top-nav-link"])}>
               Главная
             </Link>
-            <Link to="/catalog" className="header-top-nav-link">
+            <Link to="/catalog" className={cx(styles["header-top-nav-link"])}>
               Каталог
             </Link>
-            <Link to="/reviews" className="header-top-nav-link">
+            <Link to="/reviews" className={cx(styles["header-top-nav-link"])}>
               Отзывы
             </Link>
-            <Link to="/about" className="header-top-nav-link">
+            <Link to="/about" className={cx(styles["header-top-nav-link"])}>
               О нас
             </Link>
           </nav>
         </div>
       </div>
-      <div className="container">
-        <div className="header-content">
-          <div className="header-content-title">
+      <div className={cx(stylesApp["container"])}>
+        <div className={cx(styles["header-content"])}>
+          <div className={cx(styles["header-content-title"])}>
             <h1>
               Эксклюзивные <b>кухни</b>
             </h1>
             <p>в Минске в наличии и под заказ</p>
-            <button className="btn btn-default">Заказать кухню</button>
+            <button className={cx(styles["header-content-order-btn"])}>
+              Заказать кухню
+            </button>
           </div>
-          <div className="header-content-feedback">
-            <form className="feedback-form">
-              <p className="feedback-form-title">Оставьте заявку</p>
+          <div className={cx(styles["header-content-feedback"])}>
+            <form className={cx(styles["feedback-form"])}>
+              <p className={cx(styles["feedback-form-title"])}>
+                Оставьте заявку
+              </p>
               <p>
                 на <b>бесплатный</b> выезд дизайнера-замерщика
               </p>
               <input
                 type="text"
-                className="input feedback-form-input"
+                className={cx(styles["feedback-form-input"])}
                 placeholder="Телефон*"
               />
               <button
                 type="submit"
-                className="btn btn-default feedback-form-submit"
+                className={cx(styles["feedback-form-submit"])}
               >
                 Отправить
               </button>

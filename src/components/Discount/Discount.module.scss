@@ -1,0 +1,69 @@
+.section-discount {
+  padding: $spacerDefault * 6.5 $spacerDefault * 6 $spacerDefault * 7.5 50%;
+  @include font-size(22);
+  color: $fontColor;
+  box-shadow: 2px 2px 6px 1px rgba(33, 33, 33, 0.68);
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &-text {
+    @include font-size(20);
+    text-align: center;
+    color: $fontColor;
+    margin-bottom: $spacerDefault * 7;
+  }
+
+  &-top-text {
+    margin-bottom: $spacerDefault * 5 !important;
+    @include font-size(22);
+    color: $darkFontColor;
+  }
+
+  &-attention {
+    @include font-size(72);
+    font-weight: 400;
+    color: $attentionColor;
+    line-height: 1;
+  }
+}
+
+.discount-feetback {
+  position: relative;
+  padding-left: $spacerDefault * 18;
+  padding-top: $spacerDefault;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    display: block;
+    width: 150px;
+    height: 150px;
+    border: 7px solid #afafaf;
+  }
+
+  &::after {
+    top: $spacerDefault;
+    left: 7px;
+    display: block;
+    width: 159px;
+    height: 116px;
+  }
+
+  &-important-text {
+    margin-bottom: $spacerDefault * 2 !important;
+    @include font-size(30);
+    color: $darkFontColor;
+  }
+
+  &-btn {
+    @include button("default");
+  }
+}

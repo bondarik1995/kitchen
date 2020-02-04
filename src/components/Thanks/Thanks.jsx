@@ -1,22 +1,23 @@
 import React from "react";
+import cx from "classnames";
 
 import reviewPerson from "images/review-person.png";
 
-import "./Thanks.scss";
+import styles from "./Thanks.module.scss";
 
 function Thanks() {
   return (
-    <section className="section-thanks">
-      <div className="section-thanks-title">
+    <section className={cx(styles["section-thanks"])}>
+      <div className={cx(styles["section-thanks-title"])}>
         <h2>Благодарности</h2>
       </div>
-      <div className="reviews">
-        <div className="review">
-          <div className="review-media">
-            <img src={reviewPerson} alt="" className="review-img" />
+      <div className={cx(styles["reviews"])}>
+        <div className={cx(styles["review"])}>
+          <div className={cx(styles["review-media"])}>
+            <img src={reviewPerson} alt="" className={cx(styles["review-img"])} />
           </div>
-          <div className="review-description">
-            <p className="review-name">Александр Иванович</p>
+          <div className={cx(styles["review-description"])}>
+            <p className={cx(styles["review-name"])}>Александр Иванович</p>
             <p>
               Хочу сказать огромное спасибо менеджеру Наталье Пахоменко,
               работающей в студии кухни "Мария" на Минской улице, д.17, за

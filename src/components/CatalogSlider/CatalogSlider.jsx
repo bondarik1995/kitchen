@@ -26,15 +26,15 @@ class CatalogSlider extends Component {
     const { activeCatalog } = this.state;
 
     return (
-      <a
-        href="/"
+      <button
         className={cx(styles["catalog-slider-nav-item"], {
           [styles["active"]]: id === activeCatalog
         })}
+        onClick={() => this.setState({ activeCatalog: id })}
         key={id}
       >
         {title}
-      </a>
+      </button>
     );
   };
 

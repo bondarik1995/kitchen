@@ -2,6 +2,13 @@ import React from "react";
 import cx from "classnames";
 import { YMaps, Map } from "react-yandex-maps";
 
+import {
+  CONTACTS_TITLE,
+  PHONE_NUMBER,
+  EMAIL,
+  ADDRESS
+} from "constants/Contacts/";
+
 import styles from "./Contacts.module.scss";
 
 function Contacts() {
@@ -16,19 +23,15 @@ function Contacts() {
       </YMaps>
 
       <div className={cx(styles["contacts"])}>
-        <h2>
-          Наши <b>контакты</b>
-        </h2>
+        <h2>{CONTACTS_TITLE}</h2>
         <div className={cx(styles["contacts-description"])}>
           <p>
-            <a href="tel:+375333333333">
-              +375 33 <b>333-33-33</b>
-            </a>
+            <a href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER}</a>
           </p>
           <p>
-            <a href="mailto:mail@mail.ru">mail@mail.ru</a>
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </p>
-          <p>Минск, ул. Ульская, д.32, оф. 11</p>
+          <p>{ADDRESS}</p>
         </div>
       </div>
     </section>

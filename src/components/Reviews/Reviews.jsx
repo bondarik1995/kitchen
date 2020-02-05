@@ -1,57 +1,67 @@
-import React from "react";
+import React, { Component } from "react";
 import cx from "classnames";
+
+import {
+  REVIEWS_TITLE,
+  VIDEOS_TITLE,
+  VIDEOS_DESCRIPTION,
+  VIDEOS
+} from "constants/Reviews/";
 
 import styles from "./Reviews.module.scss";
 
-function Reviews() {
-  return (
-    <section className={cx(styles["section-reviews"])}>
-      <div className={cx(styles["section-reviews-title"])}>
-        <h2>
-          <b>Отзывы</b> наших клиентов
-        </h2>
+class Reviews extends Component {
+  state = {};
+
+  componentDidMount() {
+    this.setState({ videos: VIDEOS });
+  }
+
+  renderVideo = video => {
+    const { id, title, src, fullSize } = video;
+
+    return (
+      <div
+        className={cx(styles["section-reviews-video-item"], {
+          [styles["big"]]: fullSize
+        })}
+        key={id}
+      >
+        <iframe
+          title={title}
+          src={src}
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
-      <div className={cx(styles["section-reviews-content"])}>
-        <div className={cx(styles["section-reviews-description"])}>
-          <p className={cx(styles["section-reviews-description-title"])}>Видеоотзывы</p>
-          <p>
-            Клиенты записывают нам видеоотзывы, чтобы выразить все свои эмоции
-            от кухни-мечты! Присылайте свои отзывы и мы обязательно разметим их
-            на нашем сайте.
-          </p>
+    );
+  };
+
+  render() {
+    const { videos } = this.state;
+
+    return (
+      <section className={cx(styles["section-reviews"])}>
+        <div className={cx(styles["section-reviews-title"])}>
+          <h2>{REVIEWS_TITLE}</h2>
         </div>
-        <div className={cx(styles["section-reviews-videos"])}>
-          <div className={cx(styles["section-reviews-video-item"], styles["big"])}>
-            <iframe
-              title="video-1"
-              src="https://www.youtube.com/embed/ufCNzlueYAg"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+        <div className={cx(styles["section-reviews-content"])}>
+          <div className={cx(styles["section-reviews-description"])}>
+            <p className={cx(styles["section-reviews-description-title"])}>
+              {VIDEOS_TITLE}
+            </p>
+            <p>{VIDEOS_DESCRIPTION}</p>
           </div>
-          <div className={cx(styles["section-reviews-video-item"])}>
-            <iframe
-              title="video-2"
-              src="https://www.youtube.com/embed/ufCNzlueYAg"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className={cx(styles["section-reviews-video-item"])}>
-            <iframe
-              title="video-3"
-              src="https://www.youtube.com/embed/ufCNzlueYAg"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+          {videos && (
+            <div className={cx(styles["section-reviews-videos"])}>
+              {videos.map(item => this.renderVideo(item))}
+            </div>
+          )}
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 }
 
 export default Reviews;

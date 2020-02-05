@@ -1,72 +1,74 @@
-import React from "react";
+import React, { Component } from "react";
 import cx from "classnames";
+
+import {
+  ABOUT_COMPANY_TITLE,
+  ABOUT_COMPANY_SUBTITLE,
+  ABOUT_COMPANY_DESCRIPTION,
+  ABOUT_TEAM_TITLE,
+  ABOUT_TEAM_SUBTITLE,
+  TEAM
+} from "constants/About/";
 
 import personImg from "images/person.jpg";
 
 import styles from "./About.module.scss";
+import stylesApp from "styles/_base.scss";
 
-function About() {
-  return (
-    <section className={cx(styles["section-about"])}>
-      <div className={cx(styles["section-about-company"])}>
-        <div className={cx(styles["section-about-title"])}>
-          <h2>О компании</h2>
-          <p>Наше производство насчитывает 400 кв.м.</p>
-        </div>
-        <div className={cx(styles["section-about-company-description"])}>
-          <p>
-            За это время наша компания достигла высоких результатов в
-            производстве корпусной мебели, в том числе и мебели для кухни по
-            индивидуальным заказам. В цехах нашей компании установлено
-            оборудование итальянских и немецких производителей.
-          </p>
-          <p>
-            Мы предлагаем Вам подобрать кухню максимально отвечающую Вашим
-            пожеланиям и возможностям. Технологии производства кухонь позволяют
-            удовлетворить также и нестандартные пожелания, такие как гнутые
-            фасады, решётки, балясины, фасады нестандартных размеров и многое
-            другое.
-          </p>
-        </div>
+class About extends Component {
+  state = {};
+
+  componentDidMount() {
+    this.setState({ team: TEAM });
+  }
+
+  renderPerson = person => {
+    const { id, name, profession } = person;
+
+    return (
+      <div className={cx(styles["person"])} key={id}>
+        <img src={personImg} alt="" className={cx(styles["person-img"])} />
+        {name && <p className={cx(styles["person-name"])}>{name}</p>}
+        {profession && (
+          <p className={cx(styles["person-description"])}>{profession}</p>
+        )}
       </div>
-      <div className={cx(styles["section-about-team"])}>
-        <div className={cx(styles["section-about-title"])}>
-          <h2>Наша команда</h2>
-          <p>Компания насчитывает более 50 сотрудников</p>
-        </div>
-        <div className={cx(styles["team"])}>
-          <div className={cx(styles["person"])}>
-            <img src={personImg} alt="" className={cx(styles["person-img"])} />
-            <p className={cx(styles["person-name"])}>Петр Иванов</p>
-            <p className={cx(styles["person-description"])}>
-              мебельщик, стаж 27 лет
-            </p>
+    );
+  };
+
+  render() {
+    const { team } = this.state;
+
+    return (
+      <section className={cx(styles["section-about"])}>
+        <div
+          className={cx(
+            styles["section-about-company"],
+            stylesApp["section-about-company"]
+          )}
+        >
+          <div className={cx(styles["section-about-title"])}>
+            <h2>{ABOUT_COMPANY_TITLE}</h2>
+            <p>{ABOUT_COMPANY_SUBTITLE}</p>
           </div>
-          <div className={cx(styles["person"])}>
-            <img src={personImg} alt="" className={cx(styles["person-img"])} />
-            <p className={cx(styles["person-name"])}>Петр Иванов</p>
-            <p className={cx(styles["person-description"])}>
-              мебельщик, стаж 27 лет
-            </p>
-          </div>
-          <div className={cx(styles["person"])}>
-            <img src={personImg} alt="" className={cx(styles["person-img"])} />
-            <p className={cx(styles["person-name"])}>Петр Иванов</p>
-            <p className={cx(styles["person-description"])}>
-              мебельщик, стаж 27 лет
-            </p>
-          </div>
-          <div className={cx(styles["person"])}>
-            <img src={personImg} alt="" className={cx(styles["person-img"])} />
-            <p className={cx(styles["person-name"])}>Петр Иванов</p>
-            <p className={cx(styles["person-description"])}>
-              мебельщик, стаж 27 лет
-            </p>
+          <div className={cx(styles["section-about-company-description"])}>
+            <p>{ABOUT_COMPANY_DESCRIPTION}</p>
           </div>
         </div>
-      </div>
-    </section>
-  );
+        <div className={cx(styles["section-about-team"])}>
+          <div className={cx(styles["section-about-title"])}>
+          <h2>{ABOUT_TEAM_TITLE}</h2>
+          <p>{ABOUT_TEAM_SUBTITLE}</p>
+          </div>
+          {team && (
+            <div className={cx(styles["team"])}>
+              {team.map(item => this.renderPerson(item))}
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
 }
 
 export default About;

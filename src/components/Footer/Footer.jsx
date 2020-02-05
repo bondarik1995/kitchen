@@ -1,6 +1,8 @@
 import React from "react";
 import cx from "classnames";
 
+import { COPYRIGHT, DEVELOPERS } from "constants/Footer/";
+
 import styles from "./Footer.module.scss";
 import stylesApp from "styles/_base.scss";
 
@@ -10,10 +12,10 @@ function Footer() {
       <div className={cx(stylesApp["container"])}>
         <div className={cx(styles["footer"])}>
           <div className={cx(styles["footer-item"])}>
-            <p>2020 Все права защищены</p>
+            <p>2020 {COPYRIGHT}</p>
           </div>
           <div className={cx(styles["footer-item"])}>
-            <p>Разработка сайта</p>
+            <p>{DEVELOPERS}</p>
           </div>
         </div>
       </div>

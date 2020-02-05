@@ -2,6 +2,13 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import cx from "classnames";
 
+import {
+  MAIN_LINK,
+  CATALOG_LINK,
+  REVIEWS_LINK,
+  ABOUT_LINK
+} from "constants/Navigation";
+
 import Discount from "components/Discount";
 import Catalog from "components/Catalog";
 import CatalogSlider from "components/CatalogSlider";
@@ -18,18 +25,18 @@ function Main() {
     <main>
       <div className={cx(stylesApp["container"])}>
         <Switch>
-          <Route exact path="/">
+          <Route exact path={MAIN_LINK}>
             <Discount />
           </Route>
-          <Route exact path="/catalog">
+          <Route exact path={CATALOG_LINK}>
             <Catalog />
             <CatalogSlider />
           </Route>
-          <Route exact path="/reviews">
+          <Route exact path={REVIEWS_LINK}>
             <Reviews />
             <Thanks />
           </Route>
-          <Route exact path="/about">
+          <Route exact path={ABOUT_LINK}>
             <About />
             <Feetback />
             <Contacts />

@@ -10,6 +10,7 @@ import {
   FORM_DESCRIPTION
 } from "constants/Header/";
 import { SITE_NAVIGATION } from "constants/Navigation";
+import { INPUT_PHONE, SUBMIT_SEND } from "constants/Forms";
 
 import logo from "images/logo.png";
 
@@ -39,6 +40,21 @@ class Header extends Component {
       </Link>
     );
   };
+
+  renderForm = () => (
+    <form className={cx(styles["feedback-form"])}>
+      <p className={cx(styles["feedback-form-title"])}>{FORM_TITLE}</p>
+      <p>{FORM_DESCRIPTION}</p>
+      <input
+        type="text"
+        className={cx(styles["feedback-form-input"])}
+        placeholder={`${INPUT_PHONE}*`}
+      />
+      <button type="submit" className={cx(styles["feedback-form-submit"])}>
+        {SUBMIT_SEND}
+      </button>
+    </form>
+  );
 
   render() {
     const { navigation } = this.state;
@@ -71,23 +87,7 @@ class Header extends Component {
               </button>
             </div>
             <div className={cx(styles["header-content-feedback"])}>
-              <form className={cx(styles["feedback-form"])}>
-                <p className={cx(styles["feedback-form-title"])}>
-                  {FORM_TITLE}
-                </p>
-                <p>{FORM_DESCRIPTION}</p>
-                <input
-                  type="text"
-                  className={cx(styles["feedback-form-input"])}
-                  placeholder="Телефон*"
-                />
-                <button
-                  type="submit"
-                  className={cx(styles["feedback-form-submit"])}
-                >
-                  Отправить
-                </button>
-              </form>
+              {this.renderForm()}
             </div>
           </div>
         </div>

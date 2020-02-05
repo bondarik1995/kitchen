@@ -2,20 +2,25 @@ import React, { Component } from "react";
 import cx from "classnames";
 
 import { FEETBACK_TITLE, FEETBACK_DESCRIPTION } from "constants/Feetback/";
+import { INPUT_NAME, INPUT_PHONE, SUBMIT_GET_PRICE } from "constants/Forms";
 
 import styles from "./Feetback.module.scss";
 
 class Feetback extends Component {
   renderForm = () => (
     <form className={cx(styles["section-feetback-form"])}>
-      <input type="text" className={cx(styles["input"])} placeholder="Имя*" />
       <input
         type="text"
         className={cx(styles["input"])}
-        placeholder="Телефон*"
+        placeholder={`${INPUT_NAME}*`}
+      />
+      <input
+        type="text"
+        className={cx(styles["input"])}
+        placeholder={`${INPUT_PHONE}*`}
       />
       <button type="submit" className={cx(styles["btn"])}>
-        Узнать стоимость
+        {SUBMIT_GET_PRICE}
       </button>
     </form>
   );

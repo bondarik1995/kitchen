@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import cx from "classnames";
 
-import { FEETBACK_TITLE, FEETBACK_DESCRIPTION } from "constants/Feetback/";
+import { FEETBACK_TITLE, FEETBACK_DESCRIPTION } from "constants/Feetback";
 import { INPUT_NAME, INPUT_PHONE, SUBMIT_GET_PRICE } from "constants/Forms";
 
 import styles from "./Feetback.module.scss";

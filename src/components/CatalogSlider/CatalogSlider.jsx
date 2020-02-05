@@ -5,7 +5,7 @@ import {
   CATALOG_SLIDER_TITLE,
   CATALOG_SLIDER_SUBTITLE,
   CATALOG_WITH_SLIDER
-} from "constants/CatalogSlider/";
+} from "constants/CatalogSlider";
 
 import catalogSliderItem from "images/catalog-slider-item-1.jpg";
 

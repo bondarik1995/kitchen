@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import cx from "classnames";
 
-import { COPYRIGHT, DEVELOPERS } from "constants/Footer/";
+import { COPYRIGHT, DEVELOPERS } from "constants/Footer";
 
 import styles from "./Footer.module.scss";
 import stylesApp from "styles/_base.scss";

@@ -8,7 +8,7 @@ import {
   ORDER_BUTTON,
   FORM_TITLE,
   FORM_DESCRIPTION
-} from "constants/Header/";
+} from "constants/Header";
 import { SITE_NAVIGATION } from "constants/Navigation";
 import { INPUT_PHONE, SUBMIT_SEND } from "constants/Forms";
 

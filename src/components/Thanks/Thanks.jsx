@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import cx from "classnames";
 
-import { THANKS_TITLE, REVIEWS } from "constants/Thanks/";
+import { THANKS_TITLE, REVIEWS } from "constants/Thanks";
 
 import reviewPerson from "images/review-person.png";
 

@@ -8,7 +8,7 @@ import {
   OFFER_TITLE,
   OFFER_DISCOUNT,
   OFFER_DESCRIPTION
-} from "constants/Discount/";
+} from "constants/Discount";
 
 import styles from "./Discount.module.scss";
 import stylesApp from "styles/_base.scss";

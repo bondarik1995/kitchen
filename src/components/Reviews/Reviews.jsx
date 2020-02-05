@@ -6,7 +6,7 @@ import {
   VIDEOS_TITLE,
   VIDEOS_DESCRIPTION,
   VIDEOS
-} from "constants/Reviews/";
+} from "constants/Reviews";
 
 import styles from "./Reviews.module.scss";
 

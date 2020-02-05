@@ -5,8 +5,8 @@ import {
   CATALOG_TITLE,
   CATALOG,
   CATALOG_ORDER_BUTTON
-} from "constants/Catalog/";
-import { DISCOUNT, DISCOUNT_SIZE } from "constants/Discount/";
+} from "constants/Catalog";
+import { DISCOUNT, DISCOUNT_SIZE } from "constants/Discount";
 
 import catalogItem from "images/catalog-item-1.jpg";
 

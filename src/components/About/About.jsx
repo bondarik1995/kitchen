@@ -8,7 +8,7 @@ import {
   ABOUT_TEAM_TITLE,
   ABOUT_TEAM_SUBTITLE,
   TEAM
-} from "constants/About/";
+} from "constants/About";
 
 import personImg from "images/person.jpg";
 

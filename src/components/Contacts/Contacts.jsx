@@ -7,7 +7,7 @@ import {
   PHONE_NUMBER,
   EMAIL,
   ADDRESS
-} from "constants/Contacts/";
+} from "constants/Contacts";
 
 import styles from "./Contacts.module.scss";
 

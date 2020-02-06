@@ -1,15 +1,30 @@
 import React, { Component } from "react";
 import cx from "classnames";
+import Slider from "react-slick";
 
 import {
   CATALOG_SLIDER_TITLE,
   CATALOG_SLIDER_SUBTITLE,
   CATALOG_WITH_SLIDER
 } from "constants/CatalogSlider";
-
-import catalogSliderItem from "images/catalog-slider-item-1.jpg";
+import { MAIN_FOLDER } from "constants/App";
 
 import styles from "./CatalogSlider.module.scss";
+import "slick-carousel/slick/slick.scss";
+import "slick-carousel/slick/slick-theme.scss";
+import stylesSlider from "styles/_slider.scss";
+
+const SliderArrow = ({ className, onClick, ariaLabel, type }) => {
+  return (
+    <button
+      className={cx(className, stylesSlider[`slider-arrow-${type}`])}
+      onClick={onClick}
+      aria-label={ariaLabel}
+    >
+      {ariaLabel}
+    </button>
+  );
+};
 
 class CatalogSlider extends Component {
   state = {};
@@ -40,17 +55,32 @@ class CatalogSlider extends Component {
 
   renderCatalogContent = content => {
     const { id, catalog, description } = content;
+    const settings = {
+      dots: false,
+      nextArrow: <SliderArrow ariaLabel="Вперед" type="next" />,
+      prevArrow: <SliderArrow ariaLabel="Назад" type="prev" />
+    };
 
     return (
       <div key={id}>
-        <div className={cx(styles["catalog-slider-content"])}>
-          <div className={cx(styles["catalog-slider-item"])}>
-            <img src={catalogSliderItem} alt="" />
+        {catalog && (
+          <div className={cx(styles["catalog-slider-content"])}>
+            <div className={cx(styles["catalog-slider-item"])}>
+              <Slider {...settings}>
+                {catalog.map((item, i) => (
+                  <div key={`${id}-${i}`}>
+                    <img src={`${MAIN_FOLDER}${item}`} alt="" />
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
-        </div>
-        <div className={cx(styles["catalog-slider-description"])}>
-          {description && <p>{description}</p>}
-        </div>
+        )}
+        {description && (
+          <p className={cx(styles["catalog-slider-description"])}>
+            {description}
+          </p>
+        )}
       </div>
     );
   };

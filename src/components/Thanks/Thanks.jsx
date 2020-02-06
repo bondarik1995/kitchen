@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import cx from "classnames";
 
 import { THANKS_TITLE, REVIEWS } from "constants/Thanks";
-
-import reviewPerson from "images/review-person.png";
+import { MAIN_FOLDER } from "constants/App";
 
 import styles from "./Thanks.module.scss";
 
@@ -15,12 +14,16 @@ class Thanks extends Component {
   }
 
   renderReview = review => {
-    const { id, name, text } = review;
+    const { id, name, text, image } = review;
 
     return (
       <div className={cx(styles["review"])} key={id}>
         <div className={cx(styles["review-media"])}>
-          <img src={reviewPerson} alt="" className={cx(styles["review-img"])} />
+          <img
+            src={`${MAIN_FOLDER}${image}`}
+            alt=""
+            className={cx(styles["review-img"])}
+          />
         </div>
         <div className={cx(styles["review-description"])}>
           {name && <p className={cx(styles["review-name"])}>{name}</p>}

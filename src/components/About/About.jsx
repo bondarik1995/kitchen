@@ -9,8 +9,7 @@ import {
   ABOUT_TEAM_SUBTITLE,
   TEAM
 } from "constants/About";
-
-import personImg from "images/person.jpg";
+import { MAIN_FOLDER } from "constants/App";
 
 import styles from "./About.module.scss";
 import stylesApp from "styles/_base.scss";
@@ -23,14 +22,24 @@ class About extends Component {
   }
 
   renderPerson = person => {
-    const { id, name, profession } = person;
+    const { id, name, profession, experience, image } = person;
 
     return (
       <div className={cx(styles["person"])} key={id}>
-        <img src={personImg} alt="" className={cx(styles["person-img"])} />
+        {image && (
+          <img
+            src={`${MAIN_FOLDER}${image}`}
+            alt=""
+            className={cx(styles["person-img"])}
+          />
+        )}
         {name && <p className={cx(styles["person-name"])}>{name}</p>}
-        {profession && (
-          <p className={cx(styles["person-description"])}>{profession}</p>
+        {(profession || experience) && (
+          <p className={cx(styles["person-description"])}>
+            {profession}
+            {profession && experience && ", "}
+            {experience && `стаж ${experience}`}
+          </p>
         )}
       </div>
     );
@@ -57,8 +66,8 @@ class About extends Component {
         </div>
         <div className={cx(styles["section-about-team"])}>
           <div className={cx(styles["section-about-title"])}>
-          <h2>{ABOUT_TEAM_TITLE}</h2>
-          <p>{ABOUT_TEAM_SUBTITLE}</p>
+            <h2>{ABOUT_TEAM_TITLE}</h2>
+            <p>{ABOUT_TEAM_SUBTITLE}</p>
           </div>
           {team && (
             <div className={cx(styles["team"])}>

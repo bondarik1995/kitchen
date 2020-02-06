@@ -8,7 +8,8 @@ export const CATALOG = [
     name: "Пластик (стоимость за м.п.)",
     price: 600,
     currency: "BYN",
-    discount: 40
+    discount: 40,
+    image: "/uploads/images/catalog-item-1.jpg"
   },
   {
     id: "2",
@@ -16,7 +17,8 @@ export const CATALOG = [
     name: "Пластик (стоимость за м.п.)",
     price: 600,
     currency: "BYN",
-    discount: 40
+    discount: 40,
+    image: "/uploads/images/catalog-item-1.jpg"
   },
   {
     id: "3",
@@ -24,7 +26,8 @@ export const CATALOG = [
     name: "Пластик (стоимость за м.п.)",
     price: 600,
     currency: "BYN",
-    discount: 40
+    discount: 40,
+    image: "/uploads/images/catalog-item-1.jpg"
   },
   {
     id: "4",
@@ -32,6 +35,7 @@ export const CATALOG = [
     name: "Пластик (стоимость за м.п.)",
     price: 600,
     currency: "BYN",
-    discount: 40
+    discount: 40,
+    image: "/uploads/images/catalog-item-1.jpg"
   }
 ];

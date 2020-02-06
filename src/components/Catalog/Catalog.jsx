@@ -7,8 +7,7 @@ import {
   CATALOG_ORDER_BUTTON
 } from "constants/Catalog";
 import { DISCOUNT, DISCOUNT_SIZE } from "constants/Discount";
-
-import catalogItem from "images/catalog-item-1.jpg";
+import { MAIN_FOLDER } from "constants/App";
 
 import styles from "./Catalog.module.scss";
 
@@ -20,13 +19,13 @@ class Catalog extends Component {
   }
 
   renderCatalogItem = item => {
-    const { id, link, name, price, currency, discount } = item;
+    const { id, link, name, price, currency, discount, image } = item;
 
     return (
       <div className={cx(styles["catalog-item"])} key={id}>
         <a href={link} className={cx(styles["catalog-item-img-link"])}>
           <img
-            src={catalogItem}
+            src={`${MAIN_FOLDER}${image}`}
             alt=""
             className={cx(styles["catalog-item-img"])}
           />

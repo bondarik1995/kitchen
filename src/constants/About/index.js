@@ -10,21 +10,29 @@ export const TEAM = [
   {
     id: "00001",
     name: "Петр Иванов",
-    profession: "мебельщик, стаж 27 лет"
+    experience: "27 лет",
+    profession: "мебельщик",
+    image: "/uploads/images/yurij.jpg"
   },
   {
     id: "00002",
     name: "Иван Петров",
-    profession: "мебельщик, стаж 27 лет"
+    experience: "27 лет",
+    profession: "мебельщик",
+    image: "/uploads/images/yurij.jpg"
   },
   {
     id: "00003",
     name: "Василий Сидоров",
-    profession: "мебельщик, стаж 27 лет"
+    experience: "27 лет",
+    profession: "мебельщик",
+    image: "/uploads/images/yurij.jpg"
   },
   {
     id: "00004",
     name: "Сидр Васечкин",
-    profession: "мебельщик, стаж 27 лет"
+    experience: "27 лет",
+    profession: "мебельщик",
+    image: "/uploads/images/yurij.jpg"
   }
 ];

@@ -1,0 +1,64 @@
+.slider {
+  &-arrow {
+    &-prev,
+    &-next {
+      width: $spacerDefault * 2.5;
+      height: $spacerDefault * 2.5;
+      border: 2px solid rgba(207, 207, 207, 0.5);
+      transition: 0.3s;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: $spacerDefault * 0.5;
+        display: block;
+        width: $spacerDefault * 1.2;
+        height: $spacerDefault * 1.2;
+        border: 2px solid $initialLightColor;
+        opacity: 1;
+        transform: rotate(45deg);
+      }
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+
+    &-prev {
+      left: $spacerDefault * -5;
+
+      &::before,
+      &::after {
+        border-top-color: transparent;
+        border-right-color: transparent;
+      }
+
+      &::before {
+        right: $spacerDefault * -0.6;
+      }
+
+      &::after {
+        right: $spacerDefault * -1.2;
+      }
+    }
+
+    &-next {
+      right: $spacerDefault * -5;
+
+      &::before,
+      &::after {
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+
+      &::before {
+        left: $spacerDefault * -0.6;
+      }
+
+      &::after {
+        left: $spacerDefault * -1.2;
+      }
+    }
+  }
+}

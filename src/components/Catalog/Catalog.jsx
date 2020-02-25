@@ -9,49 +9,66 @@ import {
 import { DISCOUNT, DISCOUNT_SIZE } from "constants/Discount";
 import { MAIN_FOLDER } from "constants/App";
 
+import InvitationsConstructor from "components/InvitationsConstructor";
+
 import styles from "./Catalog.module.scss";
 
 class Catalog extends Component {
-  state = {};
+  state = {
+    activeInvitations: null
+  };
 
   componentDidMount() {
     this.setState({ catalog: CATALOG });
   }
 
+  openConstructorHandler = id => {
+    this.setState({ activeInvitations: id });
+  };
+
   renderCatalogItem = item => {
+    const { activeInvitations } = this.state;
     const { id, link, name, price, currency, discount, image } = item;
 
     return (
       <div className={cx(styles["catalog-item"])} key={id}>
-        <a href={link} className={cx(styles["catalog-item-img-link"])}>
-          <img
-            src={`${MAIN_FOLDER}${image}`}
-            alt=""
-            className={cx(styles["catalog-item-img"])}
-          />
-        </a>
-        {name && <p className={cx(styles["catalog-item-name"])}>{name}</p>}
-        {price && (
-          <div className={cx(styles["catalog-item-prices"])}>
-            <p
-              className={cx(styles["catalog-item-main-price"], {
-                [styles["cross-out"]]: discount
-              })}
-            >
-              {price}
-              {currency && ` ${currency}`}
-            </p>
-            {discount && (
-              <p className={cx(styles["catalog-item-sale-price"])}>
-                {(price * (100 - discount)) / 100}
+        <div>
+          <a href={link} className={cx(styles["catalog-item-img-link"])}>
+            <img
+              src={`${MAIN_FOLDER}${image}`}
+              alt=""
+              className={cx(styles["catalog-item-img"])}
+            />
+          </a>
+          {name && <p className={cx(styles["catalog-item-name"])}>{name}</p>}
+          {price && (
+            <div className={cx(styles["catalog-item-prices"])}>
+              <p
+                className={cx(styles["catalog-item-main-price"], {
+                  [styles["cross-out"]]: discount
+                })}
+              >
+                {price}
                 {currency && ` ${currency}`}
               </p>
-            )}
-          </div>
+              {discount && (
+                <p className={cx(styles["catalog-item-sale-price"])}>
+                  {(price * (100 - discount)) / 100}
+                  {currency && ` ${currency}`}
+                </p>
+              )}
+            </div>
+          )}
+          <button
+            className={cx(styles["catalog-item-btn"])}
+            onClick={() => this.openConstructorHandler(id)}
+          >
+            {CATALOG_ORDER_BUTTON}
+          </button>
+        </div>
+        {activeInvitations === id && (
+          <InvitationsConstructor id={activeInvitations} />
         )}
-        <button className={cx(styles["catalog-item-btn"])}>
-          {CATALOG_ORDER_BUTTON}
-        </button>
       </div>
     );
   };
